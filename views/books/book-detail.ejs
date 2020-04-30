@@ -1,0 +1,23 @@
+<%- include('./../header') ;%>
+    <header>
+      <h1>Books</h1>
+    </header>
+
+    <main>
+      <form action="/books/<%-data.id%>/update" method="POST" style="margin-top: 30px" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Title</label>
+          <input style="width: 50%;" value="<%- data.title %>" type="text" name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <label for="exampleInputEmail1">Mo ta</label>
+          <input style="width: 50%;" value="<%- data.description %>" type="text" name="description" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">          
+          <label for="exampleInputEmail1">Avatar</label>
+          <img src="<%-data.coverUrl%>" width="80" height="80"/>
+          <input style="width: 50%;" type="file" name="avatar" class="form-control-file" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <button type="submit" class="btn btn-primary">Update</button>
+        </div>
+        
+      </form>
+    </main>
+        <script src="https://button.glitch.me/button.js"></script>
+  </body>
+</html>

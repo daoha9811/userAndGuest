@@ -1,0 +1,72 @@
+<%- include('./../header') ;%>
+    <header>
+      <h1>Carts</h1>
+    </header>
+
+    <main>
+      <div style="display:flex; justify-content: space-between; align-items: center">
+        <p>
+          Mua hang
+        </p>
+         <form method="GET" action="/users/search" style="width:50%">
+           <div class="form-group">
+            <label for="exampleInputEmail1">Tim Kiem:</label>
+            <input style="display:inline-block; width:50%" type="text" name="q" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <button type="submit" class="btn btn-primary">Search</button>
+          </div>
+        </form>
+      </div>
+      <div style="margin-top: 30px; display: flex; align-items: center;justify-content: center; flex-direction: column">
+        <table class="table" style="width:70%; text-align:center">
+          <thead>
+            <tr>
+              <th scope="col">Avatar</th>
+              <th scope="col">Title</th>
+              <th scope="col">So Luong</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%if(typeof data != "undefined" && data.length > 0) {%>
+              <%for(let i of data) {%>
+                <tr>
+                  <td><img src="<%- i.coverUrl%>" style="width: 80px; height: 80px; border-radius: 50%"/></td>
+                  <td><%- i.title %></td>
+                  <td><%- i.slg%></td>
+                  <td>
+                      <a class="btn btn-secondary" href="/carts/<%- i.id%>/delete">xoa</a>
+                  </td>
+                </tr>  
+                <% } %>
+              <% } %>
+          </tbody>
+        </table>
+
+       <nav aria-label="...">
+        <ul class="pagination">
+          <li class="page-item">
+            <a class="page-link" href="/carts?pages=<%-previous%>" tabindex="-1">Previous</a>
+          </li>
+          <% for(let i = 1 ; i <= pages; i++) { %>
+            <%if(i == currentPage) {%>
+              <li class="page-item active" aria-current="page">
+                <a class="page-link" href="/carts?pages=<%-i%>"><%-i%> <span class="sr-only">(current)</span></a>
+              </li>
+            <% } else { %>
+            <li class="page-item">
+              <a class="page-link" href="/carts?pages=<%-i%>"><%-i%></a>
+            </li>
+            <% } %>
+          <% } %>
+          <li class="page-item">
+            <a class="page-link" href="/carts?pages=<%-next%>">Next</a>
+          </li>
+        </ul>
+      </nav>
+      </div>
+      <a class="btn btn-primary" href="/carts/pay">Thanh toan</a>
+    </main>
+
+    <script src="https://button.glitch.me/button.js"></script>
+  </body>
+</html>
