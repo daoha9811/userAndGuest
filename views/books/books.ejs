@@ -1,0 +1,68 @@
+<%- include('./../header') ;%>
+    <header>
+      <h1>Books</h1>
+    </header>
+    <main>
+      <div style="display:flex; justify-content: space-between; align-items: center">
+        <%if(isAdmin) {%>
+           <a class="btn btn-primary" href="/books/create">New</a>
+        <% } %>
+         <form method="GET" action="/books/search"  style="width:50%">
+           <div class="form-group">
+            <label for="exampleInputEmail1">Tim Kiem:</label>
+            <input style="display:inline-block; width:50%" type="text" name="q" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <button type="submit" class="btn btn-primary">Search</button>
+          </div>
+        </form>
+      </div>
+      <div style="margin-top: 30px; display: flex; align-items: center;justify-content: center; flex-direction: column">
+        <div class="container">
+          <%for(let i = 0; i < data.length; i+=3) {%>
+            <div class="row">
+              <%for(let j = i; j < data.slice(0, i+3).length; j++) { %>
+                <div class="col-md-4 col-lg-4 col-sm-6">
+                    <div class="card" style="width: 18rem;">
+                      <img class="card-img-top" src="<%- data[j].coverUrl%>" width="300" height="300" alt="Card image cap">
+                      <div class="card-body">
+                        <h5 class="card-title"><%- data[j].title%></h5>
+                        <p class="card-text"><%- data[j].description%></p>
+                        <%if(isAdmin) { %>
+                          <a class="btn btn-secondary" href="/books/<%- data[j].id%>/delete">xoa</a>
+                          <a class="btn btn-secondary" href="/books/<%- data[j].id%>/update">update</a>
+                        <% } else { %>
+                          <a class="btn btn-primary" href="/carts/addToCart/<%- data[j].id%>">ADD TO CART</a>                          
+                        <% } %>
+                      </div>
+                    </div>
+                 </div>
+                <% } %>
+            </div>
+          <% } %>
+        </div>
+        <nav aria-label="...">
+          <ul class="pagination">
+            <li class="page-item">
+              <a class="page-link" href="/books?pages=<%-previous%>" tabindex="-1">Previous</a>
+            </li>
+            <% for(let i = 1 ; i <= pages; i++) { %>
+              <%if(i == currentPage) {%>
+                <li class="page-item active" aria-current="page">
+                  <a class="page-link" href="/books?pages=<%-i%>"><%-i%> <span class="sr-only">(current)</span></a>
+                </li>
+              <% } else { %>
+              <li class="page-item">
+                <a class="page-link" href="/books?pages=<%-i%>"><%-i%></a>
+              </li>
+              <% } %>
+            <% } %>
+            <li class="page-item">
+              <a class="page-link" href="/books?pages=<%-next%>">Next</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    
+    </main>
+        <script src="https://button.glitch.me/button.js"></script>
+  </body>
+</html>

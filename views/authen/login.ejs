@@ -1,0 +1,28 @@
+<%- include('./../header') ;%>
+    <header>
+      <h1>Login</h1>
+    </header>
+
+    <main>
+      <% if(Errors.length > 0) { %>
+        <%for(let i of Errors) { %>
+          <div class="alert alert-danger" role="alert">
+            <%- i %>
+          </div>
+        <% } %>
+      <% } %>
+      
+      <form action="/login" method="POST" style="width:30%; position: absolute; top:40px; transform: translate(-50%,50%); left: 50%" >
+         <div class="form-group">
+            <label for="exampleInputEmail1">Gmail</label>
+            <input type="email" name="gmail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label for="exampleInputEmail1">Password</label>
+            <input type="password" name="password" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+      </form>
+    </main>
+
+    <script src="https://button.glitch.me/button.js"></script>
+  </body>
+</html>

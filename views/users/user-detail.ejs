@@ -1,0 +1,33 @@
+<%- include('./../header') ;%>
+    <header>
+      <h1>Update</h1>
+    </header>
+
+    <main>
+      
+      <% if(Errors.length > 0) { %>
+        <%for(let i of Errors) { %>
+          <div class="alert alert-danger" role="alert">
+            <%- i %>
+          </div>
+        <% } %>
+      <% } %>
+      
+      <form action="/users/<%-data.id%>/update" method="POST" style="margin-top: 30px" enctype="multipart/form-data">
+            <input type="hidden" name="id" value="<%-data.id%>"></input>
+            <label for="exampleInputEmail1">Name</label>
+            <input style="width: 50%;" value="<%-data.name%>" type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label for="exampleInputEmail1">Password</label>
+            <input style="width: 50%;"  type="text" name="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label for="exampleInputEmail1">Gmail</label>
+            <input style="width: 50%;" value="<%-data.gmail%>"  type="email" name="gmail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label for="exampleInputEmail1">IMG</label>
+            <img src="<%-data.imgUrl%>" width="80" height="80"/>
+            <input style="width: 50%;" type="file" name="avatar" class="form-control-file" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <button type="submit" class="btn btn-primary">Update</button>
+      </form>
+    </main>
+
+    <script src="https://button.glitch.me/button.js"></script>
+  </body>
+</html>

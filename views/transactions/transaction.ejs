@@ -1,0 +1,53 @@
+<%- include('./../header') ;%>
+    <header>
+      <h1>Transactions</h1>
+    </header>
+
+    <main>
+        <div style="display:flex; flex-direction: column; align-items: center;">
+          <%if(data) {%>
+          <div style="width:50%">
+            <%for(let i of data) {%>
+             <span style="font-weight: 700"><%-i.userName%> :</span>
+             <ul class="list-group">
+               <% for(let j = 0; j < i.bookId.length; j++) { %>
+                 <li style="display: flex; justify-content: space-between;" class="list-group-item"> 
+                   <span> <%-i.bookName[j]%> </span>
+                   <%if(isAdmin){%>
+                     <a class="btn btn-primary" href="/transactions/<%-i.userId%>/<%-i.bookId[j]%>/delete">Delete</a>
+                   <%}%>
+                 </li>
+               <% } %>
+             </ul>
+            <% } %>
+          <% } %>
+          </div>
+          <%if(isAdmin){%>
+            <nav aria-label="...">
+            <ul class="pagination">
+              <li class="page-item">
+                <a class="page-link" href="/transactions?pages=<%-previous%>" tabindex="-1">Previous</a>
+              </li>
+              <% for(let i = 1 ; i <= pages; i++) { %>
+                <%if(i == currentPage) {%>
+                  <li class="page-item active" aria-current="page">
+                    <a class="page-link" href="/transactions?pages=<%-i%>"><%-i%> <span class="sr-only">(current)</span></a>
+                  </li>
+                <% } else { %>
+                <li class="page-item">
+                  <a class="page-link" href="/transactions?pages=<%-i%>"><%-i%></a>
+                </li>
+                <% } %>
+              <% } %>
+              <li class="page-item">
+                <a class="page-link" href="/transactions?pages=<%-next%>">Next</a>
+              </li>
+            </ul>
+          </nav>  
+        </div>
+        <a class="btn btn-primary" href="/transactions/create">New</a>
+      <%}%>
+    </main>
+        <script src="https://button.glitch.me/button.js"></script>
+  </body>
+</html>

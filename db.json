@@ -1,0 +1,218 @@
+{
+  "books": [
+    {
+      "id": "1a",
+      "title": "Dac Nhan Tam",
+      "description": "hay, cuoc song",
+      "coverUrl": "http://res.cloudinary.com/daoha/image/upload/v1588218203/booksTest/1.jpg"
+    },
+    {
+      "id": "0bG35Ubcd",
+      "title": "97 dieu lap trinh vien can biet",
+      "description": "hay, cuoc song, lap trinh",
+      "coverUrl": "https://res.cloudinary.com/daoha/image/upload/v1588146078/userTest/download_btdqvy.jpg"
+    },
+    {
+      "id": "W2dmBKlo4",
+      "title": "You don't know js",
+      "description": "js",
+      "coverUrl": "https://res.cloudinary.com/daoha/image/upload/v1588146078/userTest/download_btdqvy.jpg"
+    },
+    {
+      "id": "LK0wxO9wA",
+      "title": "Tinh yeu la su lua doi",
+      "description": "romantic",
+      "coverUrl": "https://res.cloudinary.com/daoha/image/upload/v1588146078/userTest/download_btdqvy.jpg"
+    },
+    {
+      "id": "ztUpKfNUV",
+      "title": "mina no nihongo 1",
+      "description": "tieng nhat",
+      "coverUrl": "http://res.cloudinary.com/daoha/image/upload/v1588218229/booksTest/ztUpKfNUV.jpg"
+    },
+    {
+      "id": "8V1CmhFl-",
+      "title": "mina no nihongo 2",
+      "description": "tieng nhat",
+      "coverUrl": "https://res.cloudinary.com/daoha/image/upload/v1588146078/userTest/download_btdqvy.jpg"
+    },
+    {
+      "id": "23mdUWee5",
+      "title": "Tuoi tre dang gia bao nhieu",
+      "description": "sach hay",
+      "coverUrl": "http://res.cloudinary.com/daoha/image/upload/v1588218279/booksTest/23mdUWee5.jpg"
+    },
+    {
+      "id": "pCvYDVl7m",
+      "title": "Nha gia kim",
+      "description": "sach tri thuc",
+      "coverUrl": "http://res.cloudinary.com/daoha/image/upload/v1588217737/booksTest/pCvYDVl7m.jpg"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Admin",
+      "password": "$2b$10$PK8snTapGbA9mJc52JJQ7.tDs1cc4hDph9kdv1pbR0/bYKDemJ0bG",
+      "gmail": "admin@gmail.com",
+      "isAdmin": true,
+      "imgUrl": "https://res.cloudinary.com/daoha/image/upload/v1588146078/userTest/download_btdqvy.jpg"
+    },
+    {
+      "id": "5iwjijGmf",
+      "name": "nguyen van b",
+      "password": "$2b$10$PK8snTapGbA9mJc52JJQ7.tDs1cc4hDph9kdv1pbR0/bYKDemJ0bG",
+      "gmail": "nvb@gmail.com",
+      "isAdmin": false,
+      "imgUrl": "https://res.cloudinary.com/daoha/image/upload/v1588146078/userTest/download_btdqvy.jpg"
+    },
+    {
+      "id": "NcpiaZgzk",
+      "name": "nguyen van c",
+      "password": "$2b$10$Y59G74XHotpaHxfGSQApW.WpmRamIPJLupV.v95iNLamDErO99Xkm",
+      "gmail": "nvc1@gmail.com",
+      "isAdmin": false,
+      "imgUrl": "http://res.cloudinary.com/daoha/image/upload/v1588154115/userTest/NcpiaZgzk.jpg"
+    },
+    {
+      "id": "2aYv6VisA",
+      "name": "nguyen van m",
+      "gmail": "mnv@gmail.com",
+      "password": "$2b$10$PK8snTapGbA9mJc52JJQ7.tDs1cc4hDph9kdv1pbR0/bYKDemJ0bG",
+      "isAdmin": false,
+      "imgUrl": "https://res.cloudinary.com/daoha/image/upload/v1588146078/userTest/download_btdqvy.jpg"
+    },
+    {
+      "id": "SSjh0XJuo",
+      "name": "tran van b",
+      "gmail": "tvb@gmail.com",
+      "password": "$2b$10$7V5m3iArN7bVibQ/cF/gp.cxpV0n1nI44B4Wnq5Ppsae1INzjIKSC",
+      "imgUrl": "http://res.cloudinary.com/daoha/image/upload/v1588152117/userTest/SSjh0XJuo.jpg",
+      "isAdmin": false
+    },
+    {
+      "id": "tBGS5o8_8",
+      "name": "tran van a",
+      "gmail": "tva@gmail.com",
+      "password": "$2b$10$JxdNDnogVbf0zaC01Io2duKSUe40khDm0ejSPLuz/.MhQLdOCr4s2",
+      "imgUrl": "https://res.cloudinary.com/daoha/image/upload/v1588146078/userTest/download_btdqvy.jpg",
+      "isAdmin": false
+    }
+  ],
+  "transactions": [
+    {
+      "id": "1",
+      "userId": "1",
+      "bookId": [
+        "0bG35Ubcd",
+        "1a"
+      ],
+      "isComplete": false
+    },
+    {
+      "id": "2",
+      "userId": "5iwjijGmf",
+      "bookId": [
+        "0bG35Ubcd",
+        "W2dmBKlo4"
+      ],
+      "isComplete": false
+    },
+    {
+      "id": "lM9spWTFY",
+      "userId": "NcpiaZgzk",
+      "bookId": [
+        "1a"
+      ],
+      "isComplete": false
+    },
+    {
+      "id": "YucJlI9-v",
+      "userId": "2aYv6VisA",
+      "bookId": [
+        "ztUpKfNUV"
+      ],
+      "isComplete": false
+    }
+  ],
+  "Sessions": [
+    {
+      "sessionId": "k9OsCUAh7",
+      "cart": {
+        "1a": 1,
+        "0bG35Ubcd": 1
+      }
+    },
+    {
+      "sessionId": "ELWAr-eCV",
+      "cart": {
+        "1a": 1,
+        "0bG35Ubcd": 1
+      },
+      "carts": {
+        "1a": 1,
+        "0bG35Ubcd": 1,
+        "W2dmBKlo4": 1
+      }
+    },
+    {
+      "sessionId": "Hb8Wii2jC",
+      "carts": {
+        "1a": 2,
+        "0bG35Ubcd": 3,
+        "W2dmBKlo4": 1
+      }
+    },
+    {
+      "sessionId": "IITK0bOpy"
+    },
+    {
+      "sessionId": "Mm7Dq37Lq",
+      "carts": {
+        "1a": 2,
+        "W2dmBKlo4": 1
+      }
+    },
+    {
+      "sessionId": "1",
+      "carts": {}
+    },
+    {
+      "sessionId": "1"
+    },
+    {
+      "sessionId": "1"
+    },
+    {
+      "sessionId": "1"
+    },
+    {
+      "sessionId": "1"
+    },
+    {
+      "sessionId": "1"
+    },
+    {
+      "sessionId": "5iwjijGmf",
+      "carts": {
+        "1a": 1,
+        "0bG35Ubcd": 2
+      }
+    },
+    {
+      "sessionId": "0KZWf6-LK"
+    },
+    {
+      "sessionId": "MHglzZVD0",
+      "carts": {
+        "0bG35Ubcd": 1
+      }
+    },
+    {
+      "sessionId": "kTQfSjUJH"
+    }
+  ],
+  "posts": [],
+  "user": {},
+  "count": 0
+}
